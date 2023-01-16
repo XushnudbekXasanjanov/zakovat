@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'error.css' %}">
+    <script src="{% static 'js/first.js' %}"></script>
+</head>
+<body>
+<div class="text">
+  <div>Ishtirokchi sonini kiritishda hatolik !!!</div>
+  <h1>Maximum 8ta</h1>
+  <hr>
+  <div><a href="{% url 'index' %}"style="color:lightblue;">Qaytish uchun bosing</a></div>
+</div>
+
+<div class="astronaut">
+  <img src="https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-space-astronaut-cartoon-by-vexels.png" alt="" class="src">
+</div>
+</body>
+</html>

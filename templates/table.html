@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Jamoalar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4">Ro'yhatdan o'tgan jamoalar</h4>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>Tartib raqam</th>
+					        <th>Jamoa nomi</th>
+					        <th>Jamoa sardori</th>
+					        <th>Ishtirokchilar soni</th>
+					        <th>Status</th>
+						      </tr>
+					    </thead>
+					    <tbody>
+						{% for i in team %}
+					      <tr>
+					        <th scope="row" class="scope" >#{{forloop.counter}}</th>
+					        <td>{{i.team_name}}</td>
+					        <td>{{i.fullname}}</td>
+					        <td>{{i.count}} ta</td>
+							  {% if i.choice == 1 %}
+					        <td><a href="" class="btn btn-success" disabled>{{ i.get_choice_display }}</a></td>
+							{% else %}
+					        <td><a href="" class="btn btn-danger" disabled>{{ i.get_choice_display }}</a></td>
+							  {% endif %}
+					      </tr>
+						{% endfor %}
+
+
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+
